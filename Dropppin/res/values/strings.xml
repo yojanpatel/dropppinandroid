@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dropppin</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="pinTitle">Pin Title</string>
+    <string name="pinLocation">Location</string>
+    <string name="pinDescription">Description</string>
+    <string name="postPin">Post Pin</string>
+    <string name="current">Current</string>
+    <string name="title_activity_pin_form">PinFormActivity</string>
+    <string name="title_pin_list">Pins</string>
+    <string name="title_pin_detail">Pin Detail</string>
+    <string name="title_activity_pin_list">PinListActivity</string>
+    <string name="title_activity_pin_detail">PinDetailActivity</string>
+
+</resources>

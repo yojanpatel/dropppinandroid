@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="uk.co.whoisyojan.dropppin"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="uk.co.whoisyojan.dropppin.activities.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="uk.co.whoisyojan.dropppin.activities.PinFormActivity"
+            android:label="@string/title_activity_pin_form" >
+        </activity>
+        <activity
+            android:name="uk.co.whoisyojan.dropppin.PinListActivity"
+            android:label="@string/title_activity_pin_list" >
+        </activity>
+        <activity
+   			android:name="uk.co.whoisyojan.dropppin.activities.PinDetailActivity"
+            android:label="@string/title_activity_pin_form" >
+        </activity>
+        <activity
+            android:name="uk.co.whoisyojan.dropppin.activities.PinListDetailActivity"
+            android:label="@string/title_activity_pin_detail"
+            android:parentActivityName="uk.co.whoisyojan.dropppin.PinListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uk.co.whoisyojan.dropppin.PinListActivity" />
+        </activity>
+    </application>
+
+</manifest>
