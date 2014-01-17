@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+    <EditText
+        android:id="@+id/pinTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pinTitle"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
+    
+    <EditText
+        android:id="@+id/pinLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pinCurrentLocation"
+        android:layout_alignLeft="@+id/pinTitle"
+        android:layout_below="@id/pinTitle"
+        android:layout_toLeftOf="@+id/pinCurrentLocation"
+        android:hint="@string/pinLocation" />
+    
+    <Button 
+        android:id="@+id/pinCurrentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+		android:layout_alignParentRight="true"
+		android:layout_below="@id/pinTitle"
+        android:text="@string/current"
+        android:onClick="getLocation"
+	/>
+    
+    <EditText
+        android:id="@+id/pinDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pinSubmit"
+        android:layout_below="@id/pinLocation"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:hapticFeedbackEnabled="true"
+        android:hint="@string/pinDescription"
+        android:inputType="textMultiLine" />
+    
+    <Button 
+        android:id="@+id/pinSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/postPin"
+        android:onClick="addPin"
+	/>
+
+</RelativeLayout>
