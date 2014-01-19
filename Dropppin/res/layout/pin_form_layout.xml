@@ -1,59 +1,114 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
     
-    <EditText
-        android:id="@+id/pinTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/pinTitle"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
-    
-    <EditText
-        android:id="@+id/pinLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/pinCurrentLocation"
-        android:layout_alignLeft="@+id/pinTitle"
-        android:layout_below="@id/pinTitle"
-        android:layout_toLeftOf="@+id/pinCurrentLocation"
-        android:hint="@string/pinLocation" />
-    
-    <Button 
-        android:id="@+id/pinCurrentLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-		android:layout_alignParentRight="true"
-		android:layout_below="@id/pinTitle"
-        android:text="@string/current"
-        android:onClick="getLocation"
-	/>
-    
-    <EditText
-        android:id="@+id/pinDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/pinSubmit"
-        android:layout_below="@id/pinLocation"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:hapticFeedbackEnabled="true"
-        android:hint="@string/pinDescription"
-        android:inputType="textMultiLine" />
-    
-    <Button 
-        android:id="@+id/pinSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_alignParentBottom="true"
-        android:text="@string/postPin"
-        android:onClick="addPin"
-	/>
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    
+	    <EditText
+	        android:id="@+id/pinTitle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:layout_toLeftOf="@+id/pinCurrentLocation"
+	        android:hint="@string/pinTitle" />
+	    
+	    <EditText
+	        android:id="@+id/pinLocation"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/pinTitle"
+	        android:layout_alignRight="@+id/pinTitle"
+	        android:layout_below="@id/pinTitle"
+	        android:hint="@string/pinLocation" />
+	    
+	    <Button
+	        android:id="@+id/pinCurrentLocation"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/pinLocation"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@id/pinTitle"
+	        android:layout_margin="2dp"
+	        android:background="#0099cc"
+	        android:onClick="getLocation"
+	        android:text="@string/current"
+	        android:textColor="#E7E7E7" />
+	    
+	     <EditText
+	        android:id="@+id/pinLocationSearch"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/pinLocation"
+	        android:layout_below="@+id/pinLocation"
+	        android:layout_toLeftOf="@+id/pinCurrentLocation"
+	        android:hint="@string/searchLocation" />
 
-</RelativeLayout>
+	    <Button
+	        android:id="@+id/pinSearchBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/pinLocationSearch"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/pinLocationSearch"
+	        android:layout_margin="2dp"
+	        android:layout_toRightOf="@+id/pinLocationSearch"
+	        android:background="#0099cc"
+	        android:onClick="getLocation"
+	        android:text="@string/search"
+	        android:textColor="#E7E7E7" />
+	    
+	    <ProgressBar
+	        android:id="@+id/search_progress"
+	        style="?android:attr/progressBarStyleLarge"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/pinLocationSearch"
+	        android:layout_alignLeft="@+id/pinSearchBtn"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/pinLocationSearch"
+	        android:visibility="gone" />
+	     
+	    <Button
+	        android:id="@+id/pinSubmit"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/pinDescription"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginRight="5dp"
+	        android:background="#0099cc"
+	        android:onClick="addPin"
+	        android:text="@string/postPin"
+	        android:textColor="#E7E7E7" />
+
+	    <EditText
+	        android:id="@+id/pinDescription"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/pinSubmit"
+	        android:layout_alignLeft="@+id/pinLocationSearch"
+	        android:layout_alignRight="@+id/pinCurrentLocation"
+	        android:layout_below="@+id/pinLocation"
+	        android:layout_marginTop="34dp"
+	        android:ems="10"
+	        android:hapticFeedbackEnabled="true"
+	        android:hint="@string/pinDescription"
+	        android:inputType="textMultiLine" >
+
+	    </EditText>
+
+	    <ProgressBar
+	        android:id="@+id/address_progress"
+	        style="?android:attr/progressBarStyleLarge"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/pinCurrentLocation"
+	        android:layout_alignLeft="@+id/pinCurrentLocation"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/pinCurrentLocation"
+	        android:visibility="gone" />
+	
+	</RelativeLayout>
+</ScrollView>

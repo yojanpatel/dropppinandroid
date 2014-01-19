@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#4533B5E5" >
+    android:background="@drawable/row_gradient" >
 
     <ImageView
         android:id="@+id/rowImage"
@@ -20,7 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/rowImage"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/rowImage"
         android:ems="10"
         android:text="testing title"
@@ -35,6 +37,7 @@
         android:layout_alignLeft="@+id/rowTitle"
         android:layout_alignRight="@+id/rowTitle"
         android:layout_below="@+id/rowTitle"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:text="testing title"
         android:textSize="12dp"

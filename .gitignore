@@ -28,5 +28,4 @@ proguard/
 *.iws
 .idea/
 
-google-play-services_lib/
 .metadata/

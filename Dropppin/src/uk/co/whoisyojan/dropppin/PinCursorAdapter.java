@@ -13,9 +13,6 @@ public class PinCursorAdapter extends CursorAdapter {
 	Context context;
 	LayoutInflater inflater;
 	
-	// TODO: get column indexes once from constructor
-	int iUID, iTitle, iDesc, iLat, iLon;
-	
 	public PinCursorAdapter(Context context, Cursor c, int flags) {
 		super(context, c, flags);
 		this.context = context;
@@ -39,10 +36,13 @@ public class PinCursorAdapter extends CursorAdapter {
 		View view = inflater.inflate(R.layout.listview_row, parent, false);
 		return view;
 	}
+	
+	@Override
+	public long getItemId(int pos) {
+		Cursor cursor = getCursor();
+		cursor.moveToPosition(pos);
+		return cursor.getLong(cursor.getColumnIndex(PinDatabaseAdapter.idCol()));
+
+	}
 
 }
-// Code in the fragment:
-// Cursor cursor = db.query("SELECT FROM ...");
-// PinCursorAdapter pca = new PinCursorAdapter(this, cursor, 0);
-// ListView lv = (ListView)getView().findViewById(R.id.pinListView);
-// lv.setAdapter(pca);

@@ -70,11 +70,11 @@ public class PinDatabaseAdapter {
 	}
 	
 	// Access methods for column names
-	public String idCol() { return PinDatabaseHelper.UID;}
-	public String titleCol() { return PinDatabaseHelper.TITLE;}
-	public String descCol() { return PinDatabaseHelper.DESC;}
-	public String longitudeCol() { return PinDatabaseHelper.LONGITUDE;}
-	public String latitudeCol() { return PinDatabaseHelper.LATITUDE;}
+	public static String idCol() { return PinDatabaseHelper.UID;}
+	public static String titleCol() { return PinDatabaseHelper.TITLE;}
+	public static String descCol() { return PinDatabaseHelper.DESC;}
+	public static String longitudeCol() { return PinDatabaseHelper.LONGITUDE;}
+	public static String latitudeCol() { return PinDatabaseHelper.LATITUDE;}
 	
 	static class PinDatabaseHelper extends SQLiteOpenHelper {
 		private Context context;

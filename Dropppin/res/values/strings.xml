@@ -6,6 +6,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="pinTitle">Pin Title</string>
     <string name="pinLocation">Location</string>
+    <string name="searchLocation">Search Location</string>
+    <string name="search">Search</string>
     <string name="pinDescription">Description</string>
     <string name="postPin">Post Pin</string>
     <string name="current">Current</string>
@@ -14,5 +16,7 @@
     <string name="title_pin_detail">Pin Detail</string>
     <string name="title_activity_pin_list">PinListActivity</string>
     <string name="title_activity_pin_detail">PinDetailActivity</string>
+    <string name="title_activity_pin_list_map">PinListMapActivity</string>
+    <string name="title_activity_pin_map">PinMapActivity</string>
 
 </resources>
